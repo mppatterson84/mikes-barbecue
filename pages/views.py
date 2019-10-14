@@ -21,13 +21,3 @@ class AboutPageView(TemplateView):
         context['about_active_sr'] = '<span class="sr-only">(current)</span>'
         return context
     
-class ContactPageView(TemplateView):
-    template_name = 'pages/contact.html'
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Contact'
-        context['contact_active'] = 'active'
-        context['contact_active_sr'] = '<span class="sr-only">(current)</span>'
-        return context
-    
