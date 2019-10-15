@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 3rd Party
+    'background_task',
+
     # local
     'pages.apps.PagesConfig',
     'sendemail.apps.SendemailConfig',
