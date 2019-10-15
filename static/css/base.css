@@ -60,18 +60,21 @@ h1.headline{
     font-family: 'League Script', cursive;
     font-size: 86px;
     font-weight: bold;
-    color: rgba(239,59,0,0.93);
-    text-shadow:5px -5px 22px rgb(70, 16, 232);
+    color: rgba(255, 125 ,125 ,0.99);
+    text-shadow: 7px -7px 10px rgba(100,25,0,0.9),
+                 5px -5px 20px rgba(155,25,0,0.93),
+                 1px -1px 30px rgb(255, 105, 180),
+                 5px -5px 40px rgb(100, 50, 232);
     opacity: 0.8;
 }
 section.content{
     background-color: darkslateblue;
     min-height: 100vh;
-    margin-bottom: 5em;
+    /* margin-bottom: 5em; */
 }
 section.content h1{
-    padding: 1em;
-    padding-top: 1.5em;
+    padding: 1.5em 1em 0.5em 1em;
+    /* padding-top: 1.5em; */
 }
 footer section.content{
     background-color: rgba(72, 61, 139, 0.50);
