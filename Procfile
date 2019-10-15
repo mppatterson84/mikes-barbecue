@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi
+web: gunicorn mikes_barbecue_project.wsgi --log-file -
