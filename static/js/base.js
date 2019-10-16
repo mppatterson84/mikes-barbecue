@@ -4,7 +4,6 @@ var hamburger = document.querySelector(".hamburger");
 var navbar = document.querySelector(".navbar");
 var navbarNav = document.querySelector(".navbar-nav");
 var navbarCollapse = document.querySelector(".navbar-collapse");
-var theLoop = document.querySelector(".wp-block-columns");
 
 //handles the hamburger button click, animation css classes for the button and menu,
 //and the navbar background color css classes
@@ -45,29 +44,12 @@ $(window).resize(function () {
     }
 });
 
-//handles the visability and animation css classes for the
-//popup scroll to top button
+//detects if the page is being scrolled and
+//closes the nav menu if it is open
 $(document).scroll(function () {
-    if (window.pageYOffset > $("#mainNavbar").height()) {
-        $(".scroll").show();
-    }
-    var $nav = $("#mainNavbar");
-    // $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
-    $(".scroll").toggleClass("fadeInUp", window.pageYOffset > $nav.height());
-    $(".scroll").toggleClass("fadeOutDown", window.pageYOffset <= $nav.height());
     if (navbarCollapse.classList.contains("show")) {
         navbarCollapse.classList.toggle("show");
         hamburger.classList.toggle("is-active");
         navbar.classList.toggle("colorToggle", hamburger.classList.contains("is-active"));
     }
 });
-
-//does stuff when the page loads
-pageLoad();
-function pageLoad() {
-    //hides the scroll to top button when the page loads
-    //this is needed to help with the animation css classes
-    if (window.pageYOffset <= $("#mainNavbar").height()) {
-        $(".scroll").hide();
-    }
-}
