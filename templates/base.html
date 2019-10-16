@@ -36,7 +36,7 @@
 
     <header>
         <nav id="mainNavbar" class="navbar navbar-expand-md navbar-dark fixed-top">
-            <a class="navbar-brand" href="/"><img class='pigLogo' src="{% static 'images/PigFaceLogo.png' %}" alt="Mike's Barbecue"></a>
+            <a class="navbar-brand" href="{{ home_active_link|default:'/' }}"><img class='pigLogo' src="{% static 'images/PigFaceLogo.png' %}" alt="Mike's Barbecue"></a>
             <button class="navbar-toggler hamburger hamburger--slider ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="hamburger-box">
@@ -50,13 +50,13 @@
                         <a class="navbar-brand m-0 mr-md-5" href="/">Mike's Barbecue</a>
                     </li> -->
                     <li class="nav-item m-auto {{ home_active }}">
-                        <a class="nav-link mx-md-1" href="/">Home{{ home_active_sr | safe }}</a>
+                        <a class="nav-link mx-md-1" href="{{ home_active_link|default:'/' }}">Home{{ home_active_sr | safe }}</a>
                     </li>
                     <li class="nav-item m-auto {{ about_active }}">
-                        <a class="nav-link mx-md-1" href="/about/">About{{ about_active_sr | safe }}</a>
+                        <a class="nav-link mx-md-1" href="{{ about_active_link|default:'/about/' }}">About{{ about_active_sr | safe }}</a>
                     </li>
                     <li class="nav-item m-auto {{ contact_active }}">
-                        <a class="nav-link mx-md-1" href="/contact/">Contact{{ contact_active_sr | safe }}</a>
+                        <a class="nav-link mx-md-1" href="{{ contact_active_link|default:'/contact/' }}">Contact{{ contact_active_sr | safe }}</a>
                     </li>
                 </ul>
             </div>
