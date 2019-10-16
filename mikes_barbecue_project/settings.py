@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['MY_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ['MY_DEBUG']
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1:8000', 'www.mikesbarbecue.com', 'safe-badlands-92905.herokuapp.com']
 
