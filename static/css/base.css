@@ -3,6 +3,8 @@ body{
     color: rgb(200, 200, 200);
     background-color: midnightblue;
     scroll-behavior: smooth;
+    width: 100%;
+    height: auto;
     margin: 0;
 }
 
@@ -42,9 +44,9 @@ main{
     background-color: midnightblue;
 }
 section.cover{
-    /* background: radial-gradient(rgba(200, 50, 50, 0.50), rgba(175, 50, 50, 0.60), rgba(77, 45, 122, 0.70), rgba(77, 45, 175, 0.75)), */
+    background: radial-gradient(rgba(200, 50, 50, 0.50), rgba(175, 50, 50, 0.60), rgba(77, 45, 122, 0.70), rgba(77, 45, 175, 0.75)),
         /* url("https://images.unsplash.com/photo-1506968430777-bf7784a87f23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"); */
-        /* url('/static/images/wood.jpg'); */
+        url('/static/images/wood.jpg');
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -52,6 +54,7 @@ section.cover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5em;
 }
 h1.headline{
     font-family: 'League Script', cursive;
@@ -67,9 +70,11 @@ h1.headline{
 section.content{
     background-color: darkslateblue;
     min-height: 100vh;
+    /* margin-bottom: 5em; */
 }
-section.content h1, section.parallax-content h1{
+section.content h1{
     padding: 1.5em 1em 0.5em 1em;
+    /* padding-top: 1.5em; */
 }
 footer section.content{
     background-color: rgba(72, 61, 139, 0.50);
@@ -82,9 +87,6 @@ footer section.content{
     h1.headline{
         font-size: 68px;
     }
-    section.content > p, section.parallax-content > p{
-    padding: initial;
-}
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -106,9 +108,6 @@ footer section.content{
     h1.headline{
         font-size: 176px;
     }
-    section.content > p, section.parallax-content > p{
-    padding: 0 5em;
-}
 }
 
 @media only screen and (min-width: 768px) and (orientation: landscape){
