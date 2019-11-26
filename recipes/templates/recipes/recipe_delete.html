@@ -2,6 +2,7 @@
 
 
 {% block content %}
+<section class="content container">
     <h1>Delete Recipe: {{ recipe.title }}</h1>
     <p>{{ recipe.body|safe }}</p>
     <p>Author: {{ recipe.author }}</p>
@@ -13,4 +14,5 @@
         <input class="btn btn-danger" type="submit" value="Confirm" />
         <a href="{% url 'recipe-detail' recipe.pk recipe.slug %}" class="btn btn-warning">Cancel</a>
     </form>
+</section>
 {% endblock content %}

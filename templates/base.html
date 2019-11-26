@@ -74,22 +74,22 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item  m-auto {{ blog_active }}">
-                        <a class="nav-link" href="{{ blog_active_link|default:'/blog/' }}">Blog {{ blog_active_sr|safe }}</a>
+                    <li class="nav-item  m-auto {{ recipes_active }}">
+                        <a class="nav-link" href="{{ recipes_active_link|default:'/recipes/' }}">Recipes {{ recipes_active_sr|safe }}</a>
                     </li>
                     <li class="nav-item m-auto {{ all_active }}">
-                        <a class="nav-link" href="{{ all_active_link|default:'/blog/all/' }}">All Posts {{ all_active_sr|safe }}</a>
+                        <a class="nav-link" href="{{ all_active_link|default:'/recipes/all/' }}">All Recipes {{ all_active_sr|safe }}</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item m-auto {{ new_active }}">
-                        <a class="nav-link" href="{{ new_active_link|default:'/blog/new/' }}">New Post {{ new_active_sr|safe }}</a>
+                        <a class="nav-link" href="{{ new_active_link|default:'/recipes/new/' }}">New Recipe {{ new_active_sr|safe }}</a>
                     </li>
                     {% endif %}
                 </ul>
                 <div class="ml-4">
                     <!-- Search Form -->
-                    <form method="GET" action="/blog/search/" class="form-inline input-group">
-                        <input class="form-control" type="text" placeholder="Blog Search" aria-label="Blog Search"
+                    <form method="GET" action="/recipes/search/" class="form-inline input-group">
+                        <input class="form-control" type="text" placeholder="Recipes Search" aria-label="Recipes Search"
                             aria-describedby="button-addon" name="q" value="{{ request.GET.q }}" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-outline-primary" type="submit" id="button-addon">Search</button>
@@ -102,11 +102,11 @@
             
     <main>
         
-        {% block main_content %}
+        {% block content %}
             
             <h1>Hello, world!</h1>
 
-        {% endblock main_content %}
+        {% endblock content %}
 
     </main>
 

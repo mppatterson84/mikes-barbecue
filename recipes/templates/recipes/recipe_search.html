@@ -2,6 +2,7 @@
 
 
 {% block content %}
+<section class="container content">
     <h1>Search Results</h1>
         {% for recipe in object_list %}
             <div class="recipe-entry">
@@ -14,4 +15,5 @@
         {% empty %}
             <p>Search returned no results.</p>
         {% endfor %}
+</section>
 {% endblock content %}

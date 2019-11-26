@@ -3,10 +3,12 @@
 
 
 {% block content %}
+<section class="content container">
     <h1>Edit Recipe: {{ recipe.title }}</h1>
     <form action="" method="POST">{% csrf_token %}
         {{ form.as_p }}
         <input class="btn btn-success" type="submit" value="Save" />
         <a href="{% url 'recipe-detail' recipe.pk recipe.slug %}" class="btn btn-warning">Cancel</a>
     </form>
+</section>
 {% endblock content %}
