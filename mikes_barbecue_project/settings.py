@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # local
     'pages.apps.PagesConfig',
     'sendemail.apps.SendemailConfig',
+    'recipes.apps.RecipesConfig',
 
 ]
 
