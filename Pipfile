@@ -12,6 +12,7 @@ django-background-tasks = "*"
 gunicorn = "*"
 django-heroku = "*"
 whitenoise = "*"
+django-ckeditor = "*"
 
 [requires]
 python_version = "3.7"

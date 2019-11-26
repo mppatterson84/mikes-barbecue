@@ -41,6 +41,9 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     <title>Mike's Barbecue - {{ title }}</title>
+    <script>window.CKEDITOR_BASEPATH = "{% static 'ckeditor/ckeditor/' %}";</script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 </head>
 
 <body>
@@ -70,6 +73,29 @@
                         <a class="nav-link mx-md-1" href="{{ contact_active_link|default:'/contact/' }}">Contact{{ contact_active_sr | safe }}</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item  m-auto {{ blog_active }}">
+                        <a class="nav-link" href="{{ blog_active_link|default:'/blog/' }}">Blog {{ blog_active_sr|safe }}</a>
+                    </li>
+                    <li class="nav-item m-auto {{ all_active }}">
+                        <a class="nav-link" href="{{ all_active_link|default:'/blog/all/' }}">All Posts {{ all_active_sr|safe }}</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item m-auto {{ new_active }}">
+                        <a class="nav-link" href="{{ new_active_link|default:'/blog/new/' }}">New Post {{ new_active_sr|safe }}</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <div class="ml-4">
+                    <!-- Search Form -->
+                    <form method="GET" action="/blog/search/" class="form-inline input-group">
+                        <input class="form-control" type="text" placeholder="Blog Search" aria-label="Blog Search"
+                            aria-describedby="button-addon" name="q" value="{{ request.GET.q }}" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="submit" id="button-addon">Search</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </nav>
     </header>

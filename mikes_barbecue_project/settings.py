@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd Party
+    'ckeditor',
 
     # local
     'pages.apps.PagesConfig',
