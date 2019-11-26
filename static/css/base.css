@@ -69,7 +69,8 @@ h1.headline{
 }
 section.content{
     background-color: darkslateblue;
-    min-height: 100vh;
+    padding-bottom: 1em;
+    /* min-height: 100vh; */
     /* margin-bottom: 5em; */
 }
 section.content h1{
