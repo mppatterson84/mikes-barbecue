@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 
 
+{% block head_links %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script type="text/javascript">
+    var enableBtn = () => {
+        document.querySelector('#submit-btn').disabled = false
+    }
+</script>
+{% endblock head_links %}
+
 {% block content %}
     
     <section class="content container">
@@ -8,15 +17,14 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-
-                <form method="post">
+                <form action="?" method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
+                    <div class="g-recaptcha mb-1" data-sitekey="{{ reCAPTCHA_site_key_v2 }}" data-callback="enableBtn"></div>
                     <div class="form-actions">
-                        <button class="btn btn-primary" type="submit">Send</button>
+                        <button class="btn btn-primary" id="submit-btn" type="submit" disabled>Send</button>
                     </div>
                 </form>
-
             </div>
             <div class="col-md-3"></div>
         </div>
