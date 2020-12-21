@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from .forms import EmailForm
+import os
 
 def email_view(request):
     if request.method == 'GET':
