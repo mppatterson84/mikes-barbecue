@@ -7,6 +7,9 @@
     var enableBtn = () => {
         document.querySelector('#submit-btn').disabled = false
     }
+    var disableBtn = () => {
+        document.querySelector('#submit-btn').disabled = true
+    }
 </script>
 {% endblock head_links %}
 
@@ -20,7 +23,7 @@
                 <form action="?" method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <div class="g-recaptcha mb-1" data-sitekey="{{ reCAPTCHA_site_key_v2 }}" data-callback="enableBtn"></div>
+                    <div class="g-recaptcha mb-1" data-sitekey="{{ reCAPTCHA_site_key_v2 }}" data-callback="enableBtn" data-expired-callback="disableBtn"></div>
                     <div class="form-actions">
                         <button class="btn btn-primary" id="submit-btn" type="submit" disabled>Send</button>
                     </div>
