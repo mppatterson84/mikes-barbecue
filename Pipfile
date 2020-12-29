@@ -13,6 +13,7 @@ gunicorn = "*"
 django-heroku = "*"
 whitenoise = "*"
 django-ckeditor = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
